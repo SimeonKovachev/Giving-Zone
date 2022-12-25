@@ -1,13 +1,14 @@
-﻿namespace Giving_Zone.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Giving_Zone.Models
 {
-    public class Volunteer
+    public class Volunteer : User
     {
-        public int VolunteerId { get; set; }
-        public int UserId { get; set; }
-        public string Name { get; set; }
-        public int PhoneNumber { get; set; }
-        public string Location { get; set; }
-        public string Bio { get; set; }
+        [Key]
+        public int Id { get; set; }
+        [Required]
         public string Skills { get; set; }
+        public virtual ICollection<VolunteerOpportunity> Opportunities { get; set; }
+
     }
 }
