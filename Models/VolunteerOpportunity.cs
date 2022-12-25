@@ -5,6 +5,7 @@ namespace Giving_Zone.Models
 {
     public class VolunteerOpportunity
     {
+        //This is the oppurtunities the organizations will create
         [Key]
         public int Id { get; set; }
         public string Title { get; set; }
@@ -12,6 +13,8 @@ namespace Giving_Zone.Models
         public string Location { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+
+        //Relationships
         public int OrganizationId { get; set; }
         [ForeignKey("OrganizationId")]
         public virtual Organization Organization { get; set; }
